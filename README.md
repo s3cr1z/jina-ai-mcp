@@ -120,7 +120,7 @@ Cursor and Claude Desktop (Windows) [have a bug](https://www.npmjs.com/package/m
 
 ### My LLM never uses some tools
 
-Assuming all tools are enabled in your MCP client but your LLM still never uses some tools, it's likely your LLM favors some tools over others, which is pretty common when an LLM is trained with a specific set of tools. For example, we rarely see `parallel_*` tools being used organically by LLMs unless they are explicitly instructed to do so. [Some research says LLMs must be trained to use `parallel_*`](https://arxiv.org/abs/2508.09303). In Cursor, you can add the following rule to your `.mdc` file:
+Assuming all tools are enabled in your MCP client but LLM still never uses some tools or favors some over others, this is pretty common when an LLM is trained with a specific set of tools. For example, we rarely see `parallel_*` tools being used organically by LLMs unless they are explicitly instructed to do so. [Some research says LLMs must be trained to use `parallel_*`](https://arxiv.org/abs/2508.09303). Models like Qwen3-Next natively prefer to call the singleton version but with multiple queries in an array to achieve parallelism (which our MCP also support now). Either way, in Cursor, you can add the following rule to your `.mdc` file:
 
 ```text
 ---
